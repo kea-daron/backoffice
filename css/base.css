@@ -14,7 +14,7 @@ body{
   height:100dvh;
   min-height:100vh;
   min-height:100dvh;
-  background:linear-gradient(135deg, #6C5CE0 0%, #4FA3E3 100%);
+  background: linear-gradient(160deg, #0f0c29 0%, #1a1060 35%, #2d1b8b 65%, #1e0a4a 100%);
   display:flex;
   flex-direction:column;
   position:relative;
