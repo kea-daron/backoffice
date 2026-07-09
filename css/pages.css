@@ -1,0 +1,730 @@
+/* sub-accounts table */
+.subaccounts-table-wrap{
+  background:#fffdf7;
+  border:1px solid var(--rule);
+  box-shadow:0 2px 10px rgba(30,32,70,0.06);
+  border-radius:16px;
+  overflow:hidden;
+}
+.subaccounts-table{width:100%;border-collapse:collapse;}
+.subaccounts-table thead th{
+  background:var(--parchment-2);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  text-align:left;
+  padding:13px 16px;
+}
+.subaccounts-table tbody td{
+  padding:15px 16px;
+  border-top:1px solid var(--rule);
+  font-size:13px;
+  vertical-align:middle;
+}
+.subaccounts-table tbody tr:nth-child(even){background:var(--parchment-2);}
+.subaccount-username{
+  font-weight:700;
+  color:var(--brass-dark);
+  cursor:pointer;
+}
+
+/* bank accounts */
+.bank-card{
+  background:#fffdf7;
+  border:1px solid var(--rule);
+  box-shadow:0 2px 10px rgba(30,32,70,0.06);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:14px;
+}
+.bank-card-top{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:14px;
+}
+.bank-logo{
+  width:42px;
+  height:42px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-weight:700;
+  font-size:13px;
+  letter-spacing:0.3px;
+  flex-shrink:0;
+}
+.bank-name-block{flex:1;min-width:0;}
+.bank-name{
+  font-size:16.5px;
+  font-weight:600;
+  color:var(--ink);
+}
+.bank-group-chip{
+  display:inline-block;
+  margin-top:3px;
+  font-size:9.5px;
+  font-weight:700;
+  letter-spacing:0.8px;
+  text-transform:uppercase;
+  color:var(--brass-dark);
+  background:var(--brass-soft);
+  border-radius:8px;
+  padding:2px 8px;
+}
+.bank-badges{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:5px;
+  flex-shrink:0;
+}
+.badge.default-yes{background:var(--ink-2);color:var(--parchment);}
+.bank-meta{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-bottom:14px;
+}
+.bank-actions{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border-top:1px solid var(--rule);
+  padding-top:12px;
+}
+.set-default-link{
+  font-size:11.5px;
+  font-weight:700;
+  color:var(--sage);
+  text-decoration:underline;
+  text-decoration-color:var(--rule);
+  text-underline-offset:3px;
+  cursor:pointer;
+}
+
+/* bank groups */
+.group-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:#fffdf7;
+  border:1px solid var(--rule);
+  box-shadow:0 2px 10px rgba(30,32,70,0.06);
+  border-radius:12px;
+  padding:14px 16px;
+  margin-bottom:10px;
+}
+.group-name{
+  font-size:15.5px;
+  font-weight:600;
+  color:var(--brass-dark);
+}
+.group-actions{
+  display:flex;
+  gap:8px;
+  flex-shrink:0;
+}
+
+/* deposit requests */
+.deposit-card{
+  background:#fffdf7;
+  border:1px solid var(--rule);
+  box-shadow:0 2px 10px rgba(30,32,70,0.06);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:14px;
+}
+.deposit-card-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin-bottom:14px;
+  gap:10px;
+}
+.deposit-player{
+  font-size:16.5px;
+  font-weight:600;
+  color:var(--ink);
+}
+.deposit-amount{
+  font-size:21px;
+  font-weight:600;
+  color:var(--brass-dark);
+  margin-top:2px;
+}
+.deposit-meta{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-bottom:14px;
+}
+.deposit-meta .meta-value{
+  font-size:12.5px;
+  font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.deposit-actions{
+  display:flex;
+  gap:8px;
+  border-top:1px solid var(--rule);
+  padding-top:12px;
+}
+.deposit-filters{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-bottom:20px;
+}
+.empty-state{
+  text-align:center;
+  color:var(--ink-soft);
+  font-size:13px;
+  font-weight:600;
+  padding:40px 10px;
+}
+
+/* global transactions */
+.txn-filters{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:20px;
+}
+.txn-filters .date-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.reset-filters-btn{
+  width:100%;
+  background:var(--parchment-2);
+  border:1px solid var(--rule);
+  box-shadow:0 2px 10px rgba(30,32,70,0.06);
+  border-radius:10px;
+  padding:10px;
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.4px;
+  color:var(--brass-dark);
+  cursor:pointer;
+}
+.txn-list-wrap{
+  background:#fffdf7;
+  border:1px solid var(--rule);
+  box-shadow:0 2px 10px rgba(30,32,70,0.06);
+  border-radius:16px;
+  overflow:hidden;
+}
+.txn-list-row{
+  padding:14px 16px;
+  border-bottom:1px solid var(--rule);
+}
+.txn-list-row:last-child{border-bottom:none;}
+.txn-list-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:8px;
+}
+.txn-list-parties{
+  font-size:13px;
+  font-weight:600;
+  color:var(--ink);
+}
+.txn-list-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.txn-list-date{
+  font-size:11px;
+  color:var(--ink-soft);
+  font-weight:600;
+}
+
+/* win/loss report */
+.report-filters{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:20px;
+}
+.report-filters .date-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.search-btn-full{
+  width:100%;
+  background:#3b6ea5;
+  color:#fff;
+  border:none;
+  border-radius:10px;
+  padding:12px;
+  font-size:12.5px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+  cursor:pointer;
+}
+.report-card{
+  background:#fffdf7;
+  border:1px solid var(--rule);
+  box-shadow:0 2px 10px rgba(30,32,70,0.06);
+  border-radius:14px;
+  padding:16px;
+  margin-bottom:12px;
+}
+.report-date{
+  font-size:15.5px;
+  font-weight:600;
+  color:var(--ink);
+  margin-bottom:12px;
+}
+.report-meta{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.report-meta .meta-value{
+  font-size:14.5px;
+  font-weight:600;
+  color:var(--ink);
+}
+.report-meta .meta-value.pos{color:var(--sage);}
+.report-meta .meta-value.neg{color:var(--alert);}
+
+/* security page */
+.security-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+/* user role page */
+.role-search-wrap{
+  position:relative;
+  margin-bottom:18px;
+}
+.role-search-wrap svg{
+  position:absolute;
+  left:14px;
+  top:50%;
+  transform:translateY(-50%);
+  width:15px;
+  height:15px;
+  stroke:var(--ink-soft);
+  fill:none;
+  stroke-width:2;
+}
+.role-search-wrap input{padding-left:38px;}
+.role-card{
+  background:#fffdf7;
+  border:1px solid var(--rule);
+  box-shadow:0 2px 10px rgba(30,32,70,0.06);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:14px;
+}
+.role-card-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:14px;
+}
+.role-index{
+  font-size:12px;
+  font-weight:700;
+  color:var(--ink-soft);
+}
+.badge.role-tag{display:inline-flex;align-items:center;gap:5px;}
+.badge.role-tag svg{width:11px;height:11px;fill:none;stroke-width:2;stroke:#fff;}
+.badge.role-superadmin{background:#c2185b;color:#fff;}
+.badge.role-supervisor{background:#2b6cb0;color:#fff;}
+.badge.role-agent-tag{background:var(--sage);color:#fff;}
+.role-meta{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-bottom:14px;
+}
+.role-desc-text{
+  font-size:12.5px;
+  color:var(--ink-soft);
+  line-height:1.55;
+  margin-bottom:14px;
+}
+.role-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:8px;
+  border-top:1px solid var(--rule);
+  padding-top:12px;
+}
+
+/* user account page */
+.useraccount-search-wrap{
+  position:relative;
+  margin-bottom:18px;
+}
+.useraccount-search-wrap svg{
+  position:absolute;
+  left:14px;
+  top:50%;
+  transform:translateY(-50%);
+  width:15px;
+  height:15px;
+  stroke:var(--ink-soft);
+  fill:none;
+  stroke-width:2;
+}
+.useraccount-search-wrap input{padding-left:38px;}
+.useraccount-card{
+  background:#fffdf7;
+  border:1px solid var(--rule);
+  box-shadow:0 2px 10px rgba(30,32,70,0.06);
+  border-radius:16px;
+  padding:16px;
+  margin-bottom:14px;
+}
+.useraccount-card-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin-bottom:14px;
+}
+.useraccount-name{
+  font-size:17px;
+  font-weight:600;
+  color:var(--ink);
+}
+.useraccount-info{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-bottom:14px;
+}
+.useraccount-info .meta-value{
+  font-size:13px;
+  font-weight:600;
+  color:var(--ink);
+}
+.useraccount-actions{
+  display:flex;
+  justify-content:flex-end;
+  gap:8px;
+  border-top:1px solid var(--rule);
+  padding-top:12px;
+}
+
+/* authorization page */
+.auth-role-select{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:24px;
+}
+.auth-role-option{
+  padding:10px 16px;
+  border:1.5px solid var(--rule);
+  background:#fffdf7;
+  border-radius:12px;
+  font-size:13px;
+  font-weight:600;
+  color:var(--ink-soft);
+  cursor:pointer;
+  transition:all .2s ease;
+}
+.auth-role-option.selected{
+  border-color:var(--brass);
+  background:var(--brass-soft);
+  color:var(--brass-dark);
+}
+.auth-permission-section{
+  margin-bottom:24px;
+}
+.auth-section-title{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin-bottom:12px;
+  padding:0 0 10px;
+  border-bottom:1px solid var(--rule);
+}
+.auth-section-icon{
+  width:18px;
+  height:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:10px;
+}
+.auth-permission-row{
+  display:grid;
+  grid-template-columns:1fr auto auto auto auto;
+  align-items:center;
+  gap:12px;
+  padding:14px 0;
+  border-bottom:1px solid var(--rule);
+}
+.auth-permission-row:last-child{border-bottom:none;}
+.auth-permission-name{
+  font-size:13px;
+  font-weight:600;
+  color:var(--ink);
+}
+.auth-permission-cols{
+  display:flex;
+  gap:8px;
+}
+.auth-permission-checkbox{
+  width:28px;
+  height:28px;
+  border:1.5px solid var(--rule);
+  border-radius:6px;
+  background:#fffdf7;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  transition:all .15s ease;
+}
+.auth-permission-checkbox:hover{border-color:var(--brass);}
+.auth-permission-checkbox.checked{
+  background:var(--brass);
+  border-color:var(--brass);
+}
+.auth-permission-checkbox.checked::after{
+  content:'✓';
+  color:#fff;
+  font-size:14px;
+  font-weight:700;
+}
+.auth-permission-label{
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:0.5px;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  text-align:center;
+  margin-top:4px;
+}
+.auth-save-btn{
+  width:100%;
+  background:var(--brass);
+  color:#fff;
+  border:none;
+  border-radius:14px;
+  padding:14px;
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+  cursor:pointer;
+  margin-top:20px;
+}
+.auth-save-btn:hover{opacity:0.9;}
+.auth-save-btn:active{transform:scale(0.98);}
+/* ---- Change Password View ---- */
+.cp-container {
+  padding: 16px;
+  background: var(--parchment-2);
+}
+.cp-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+.cp-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.cp-shield {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--brass);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.cp-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--ink-2);
+}
+.cp-user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--parchment);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 24px;
+}
+.cp-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--brass-soft);
+  color: var(--brass-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+.cp-user-details {
+  display: flex;
+  flex-direction: column;
+}
+.cp-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+.cp-role {
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+.cp-section-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--brass);
+  margin-bottom: 16px;
+  position: relative;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+.cp-section-title::after {
+  content: '';
+  flex: 1;
+  margin-left: 10px;
+  border-bottom: 1px dashed var(--rule);
+}
+.cp-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+.cp-req {
+  color: var(--alert);
+}
+.cp-input-wrap {
+  position: relative;
+}
+.cp-input {
+  padding-right: 40px;
+  border-radius: 8px;
+}
+.cp-eye-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cp-eye-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: var(--ink-soft);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.cp-hint {
+  font-size: 11px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+.cp-requirements {
+  background: var(--parchment);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.cp-req-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin-bottom: 10px;
+}
+.cp-req-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cp-req-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+.cp-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #d1d5db;
+  border: 3px solid var(--parchment);
+  box-shadow: 0 0 0 1px #d1d5db;
+}
+.cp-update-btn {
+  width: 100%;
+  background: var(--brass);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.2s;
+}
+.cp-update-btn:hover {
+  opacity: 0.9;
+}
+.cp-update-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}

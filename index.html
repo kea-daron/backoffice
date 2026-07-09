@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Back Office</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/modals.css">
+<link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+<div class="phone">
+
+<!-- ==================== HOME VIEW ==================== -->
+<div class="view" id="view-home">
+
+  <div class="statusbar">
+    <span>1:10 PM</span>
+    <div class="icons">
+      <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="7" width="3" height="5" fill="#f6f2e6"/><rect x="5" y="5" width="3" height="7" fill="#f6f2e6"/><rect x="10" y="3" width="3" height="9" fill="#f6f2e6"/><rect x="15" y="0" width="3" height="12" fill="#f6f2e6"/></svg>
+      <svg width="16" height="12" viewBox="0 0 16 12"><path d="M1 4C5 0 11 0 15 4" stroke="#f6f2e6" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M3.5 6.8C6.2 4.2 9.8 4.2 12.5 6.8" stroke="#f6f2e6" stroke-width="1.4" fill="none" stroke-linecap="round"/><circle cx="8" cy="10" r="1.3" fill="#f6f2e6"/></svg>
+      <svg width="26" height="13" viewBox="0 0 26 13"><rect x="0.5" y="0.5" width="22" height="12" rx="3" stroke="#f6f2e6" fill="none"/><rect x="2" y="2" width="19" height="9" rx="1.5" fill="#f6f2e6"/><rect x="23.5" y="4" width="2" height="5" rx="1" fill="#f6f2e6"/></svg>
+    </div>
+  </div>
+
+  <div class="header">
+    <div class="avatar-ring">
+      <div class="avatar">
+        <svg viewBox="0 0 48 48"><rect width="48" height="48" fill="#8b6fa3"/><circle cx="24" cy="19" r="8" fill="#f0e4d8"/><path d="M8 46c0-10 7-16 16-16s16 6 16 16" fill="#3a3140"/></svg>
+      </div>
+    </div>
+    <div class="names">
+      <span class="role">@keadaron</span>
+      <span class="name">Kea Daron</span>
+    </div>
+  </div>
+
+  <div class="sheet">
+    <div class="section-label">Overview Stats</div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-label">Total Downline Members</span>
+        <div class="stat-value">6</div>
+        <span class="stat-delta up">↑ 12 new this week</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Agent</span>
+        <div class="stat-value">1</div>
+        <span class="stat-delta up">↑ 5 today</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Player</span>
+        <div class="stat-value">3</div>
+        <span class="stat-delta up">↑ 8.4% this week</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Master</span>
+        <div class="stat-value">2</div>
+        <span class="stat-delta warn">⚠ Needs review</span>
+      </div>
+    </div>
+
+    <div class="section-label">Quick Actions</div>
+    <div class="actions-grid" style="margin-top:14px;">
+      <div class="action-card" onclick="showView('accounts')">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <div class="action-label">Accounts</div>
+      </div>
+      <div class="action-card" onclick="showView('subaccounts')">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></div>
+        <div class="action-label">Sub-Accounts</div>
+      </div>
+      <div class="action-card" onclick="showView('bankaccounts')">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
+        <div class="action-label">Bank Accounts</div>
+      </div>
+      <div class="action-card" onclick="showView('bankgroups')">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <div class="action-label">Bank Groups</div>
+      </div>
+      <div class="action-card" onclick="showView('depositrequests')">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke-linecap="round" stroke-linejoin="round"/><polyline points="7 10 12 15 17 10" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="15" x2="12" y2="3" stroke-linecap="round"/></svg></div>
+        <div class="action-label">Deposit Requests</div>
+      </div>
+      <div class="action-card" onclick="showView('withdrawalrequests')">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" stroke-linecap="round" stroke-linejoin="round"/><polyline points="17 8 12 3 7 8" stroke-linecap="round" stroke-linejoin="round"/><line x1="12" y1="3" x2="12" y2="15" stroke-linecap="round"/></svg></div>
+        <div class="action-label">Withdrawal</div>
+      </div>
+      <div class="action-card" onclick="showView('transactions')">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M17 2l4 4-4 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 11v-1a4 4 0 0 1 4-4h14" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 22l-4-4 4-4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 13v1a4 4 0 0 1-4 4H3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="action-label">Transactions</div>
+      </div>
+      <div class="action-card" onclick="showView('winlossreport')">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M3 3v18h18" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 17V9" stroke-linecap="round"/><path d="M13 17V5" stroke-linecap="round"/><path d="M8 17v-3" stroke-linecap="round"/></svg></div>
+        <div class="action-label">Win/Loss Report</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item active" onclick="showView('home')">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+      <span>Home</span>
+    </div>
+    <div class="nav-item">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg>
+      <span>Quick</span>
+    </div>
+    <div class="nav-item" onclick="showView('security')">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+      <span>Security</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ==================== ACCOUNTS VIEW ==================== -->
+<div class="view hidden" id="view-accounts">
+
+  <div class="page-topbar">
+    <div class="back-btn" onclick="showView('home')">
+      <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <span class="page-title">Accounts</span>
+    <button class="new-user-btn" onclick="openModal()">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8" stroke-linecap="round"/></svg>
+      New User
+    </button>
+  </div>
+
+  <div class="accounts-sheet">
+
+    <div class="filter-chip">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3" stroke-linecap="round"/></svg>
+      AAABBBMM
+    </div>
+
+    <div class="account-card">
+      <div class="account-card-top">
+        <div class="account-globe">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9s1.3-6.5 3.8-9z" stroke-linecap="round"/></svg>
+        </div>
+        <span class="account-username" onclick="showView('downline')">AAABBBMMAA</span>
+      </div>
+
+      <div class="account-meta">
+        <div class="meta-block">
+          <span class="meta-label">Role</span>
+          <span class="badge role">Agent</span>
+        </div>
+        <div class="meta-block">
+          <span class="meta-label">Status</span>
+          <span class="badge status-active" onclick="openStatusModal()" style="cursor:pointer;">Active</span>
+        </div>
+        <div class="meta-block">
+          <span class="meta-label">Balance</span>
+          <span class="meta-balance">N/A</span>
+        </div>
+      </div>
+
+      <div class="account-actions">
+        <button class="pill-btn transfer" onclick="sendPrompt('Transfer for AAABBBMMAA')">
+          <svg viewBox="0 0 24 24"><path d="M3 12h16M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Transfer
+        </button>
+        <button class="pill-btn withdraw" onclick="sendPrompt('Withdraw for AAABBBMMAA')">
+          <svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Withdraw
+        </button>
+        <button class="pill-btn edit" onclick="openEditModal()">
+          <svg viewBox="0 0 24 24"><path d="M4 20l1-4.5L15.5 5l3.5 3.5L8.5 19 4 20z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Edit User
+        </button>
+        <button class="pill-btn reset" onclick="openResetModal()">
+          <svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke-linecap="round"/></svg>
+          Reset Password
+        </button>
+        <button class="pill-btn channels" onclick="openChannelsModal()">
+          <svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.3"/><circle cx="18" cy="6" r="2.4"/><path d="M7.8 7.3L11 16M16.2 7.3L13 16" stroke-linecap="round"/></svg>
+          Assign Channels
+        </button>
+        <button class="pill-btn domains" onclick="openDomainsModal()">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9s1.3-6.5 3.8-9z" stroke-linecap="round"/></svg>
+          Manage Domains
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item" onclick="showView('home')">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg>
+      <span>Home</span>
+    </div>
+    <div class="nav-item">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg>
+      <span>Quick</span>
+    </div>
+    <div class="nav-item" onclick="showView('security')">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+      <span>Security</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ==================== DOWNLINE VIEW ==================== -->
+<div class="view hidden" id="view-downline">
+
+  <div class="page-topbar">
+    <div class="back-btn" onclick="showView('accounts')">
+      <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <span class="page-title">Accounts</span>
+    <button class="new-user-btn" onclick="openModal()">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8" stroke-linecap="round"/></svg>
+      New User
+    </button>
+  </div>
+
+  <div class="accounts-sheet">
+
+    <div class="breadcrumb">
+      <span class="breadcrumb-link" onclick="showView('accounts')">AAABBBMM</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current">AAABBBMMAA</span>
+    </div>
+
+    <div class="account-card">
+      <div class="account-card-top">
+        <div class="account-globe">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9s1.3-6.5 3.8-9z" stroke-linecap="round"/></svg>
+        </div>
+        <span class="account-username" onclick="openPlayer('APXvirak')">APXvirak</span>
+      </div>
+      <div class="account-meta">
+        <div class="meta-block"><span class="meta-label">Role</span><span class="badge role">Player</span></div>
+        <div class="meta-block"><span class="meta-label">Status</span><span class="badge status-active" onclick="openStatusModal()" style="cursor:pointer;">Active</span></div>
+        <div class="meta-block"><span class="meta-label">Balance</span><span class="meta-balance">$60.57</span></div>
+      </div>
+      <div class="account-actions">
+        <button class="pill-btn transfer" onclick="sendPrompt('Transfer for APXvirak')"><svg viewBox="0 0 24 24"><path d="M3 12h16M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Transfer</button>
+        <button class="pill-btn withdraw" onclick="sendPrompt('Withdraw for APXvirak')"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Withdraw</button>
+        <button class="pill-btn edit" onclick="openEditModal()"><svg viewBox="0 0 24 24"><path d="M4 20l1-4.5L15.5 5l3.5 3.5L8.5 19 4 20z" stroke-linecap="round" stroke-linejoin="round"/></svg>Edit User</button>
+        <button class="pill-btn reset" onclick="openResetModal()"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke-linecap="round"/></svg>Reset Password</button>
+        <button class="pill-btn channels" onclick="openChannelsModal()"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.3"/><circle cx="18" cy="6" r="2.4"/><path d="M7.8 7.3L11 16M16.2 7.3L13 16" stroke-linecap="round"/></svg>Assign Channels</button>
+      </div>
+    </div>
+
+    <div class="account-card">
+      <div class="account-card-top">
+        <div class="account-globe">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9s1.3-6.5 3.8-9z" stroke-linecap="round"/></svg>
+        </div>
+        <span class="account-username" onclick="openPlayer('APXtest123')">APXtest123</span>
+      </div>
+      <div class="account-meta">
+        <div class="meta-block"><span class="meta-label">Role</span><span class="badge role">Player</span></div>
+        <div class="meta-block"><span class="meta-label">Status</span><span class="badge status-active" onclick="openStatusModal()" style="cursor:pointer;">Active</span></div>
+        <div class="meta-block"><span class="meta-label">Balance</span><span class="meta-balance">$495.00</span></div>
+      </div>
+      <div class="account-actions">
+        <button class="pill-btn transfer" onclick="sendPrompt('Transfer for APXtest123')"><svg viewBox="0 0 24 24"><path d="M3 12h16M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Transfer</button>
+        <button class="pill-btn withdraw" onclick="sendPrompt('Withdraw for APXtest123')"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Withdraw</button>
+        <button class="pill-btn edit" onclick="openEditModal()"><svg viewBox="0 0 24 24"><path d="M4 20l1-4.5L15.5 5l3.5 3.5L8.5 19 4 20z" stroke-linecap="round" stroke-linejoin="round"/></svg>Edit User</button>
+        <button class="pill-btn reset" onclick="openResetModal()"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke-linecap="round"/></svg>Reset Password</button>
+        <button class="pill-btn channels" onclick="openChannelsModal()"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.3"/><circle cx="18" cy="6" r="2.4"/><path d="M7.8 7.3L11 16M16.2 7.3L13 16" stroke-linecap="round"/></svg>Assign Channels</button>
+      </div>
+    </div>
+
+    <div class="account-card">
+      <div class="account-card-top">
+        <div class="account-globe">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9s1.3-6.5 3.8-9z" stroke-linecap="round"/></svg>
+        </div>
+        <span class="account-username" onclick="openPlayer('AAABBBMMAAT12')">AAABBBMMAAT12</span>
+      </div>
+      <div class="account-meta">
+        <div class="meta-block"><span class="meta-label">Role</span><span class="badge role">Player</span></div>
+        <div class="meta-block"><span class="meta-label">Status</span><span class="badge status-active" onclick="openStatusModal()" style="cursor:pointer;">Active</span></div>
+        <div class="meta-block"><span class="meta-label">Balance</span><span class="meta-balance">N/A</span></div>
+      </div>
+      <div class="account-actions">
+        <button class="pill-btn transfer" onclick="sendPrompt('Transfer for AAABBBMMAAT12')"><svg viewBox="0 0 24 24"><path d="M3 12h16M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Transfer</button>
+        <button class="pill-btn withdraw" onclick="sendPrompt('Withdraw for AAABBBMMAAT12')"><svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Withdraw</button>
+        <button class="pill-btn edit" onclick="openEditModal()"><svg viewBox="0 0 24 24"><path d="M4 20l1-4.5L15.5 5l3.5 3.5L8.5 19 4 20z" stroke-linecap="round" stroke-linejoin="round"/></svg>Edit User</button>
+        <button class="pill-btn reset" onclick="openResetModal()"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4" stroke-linecap="round"/></svg>Reset Password</button>
+        <button class="pill-btn channels" onclick="openChannelsModal()"><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.3"/><circle cx="18" cy="6" r="2.4"/><path d="M7.8 7.3L11 16M16.2 7.3L13 16" stroke-linecap="round"/></svg>Assign Channels</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item" onclick="showView('home')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></div>
+    <div class="nav-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Quick</span></div>
+    <div class="nav-item" onclick="showView('security')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Security</span></div>
+  </div>
+
+</div>
+
+<!-- ==================== SUB-ACCOUNTS VIEW ==================== -->
+<div class="view hidden" id="view-subaccounts">
+
+  <div class="page-topbar">
+    <div class="back-btn" onclick="showView('home')"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <span class="page-title">Sub-Accounts</span>
+    <button class="new-user-btn" onclick="openSubaccountCreateModal()">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8" stroke-linecap="round"/></svg>
+      New User
+    </button>
+  </div>
+
+  <div class="accounts-sheet">
+    <div class="section-label" style="margin-bottom:16px;">Sub-Accounts Management</div>
+    <div class="subaccounts-table-wrap">
+      <table class="subaccounts-table">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="subaccounts-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item" onclick="showView('home')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></div>
+    <div class="nav-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Quick</span></div>
+    <div class="nav-item" onclick="showView('security')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Security</span></div>
+  </div>
+
+</div>
+
+<!-- ==================== SUB-ACCOUNT DETAIL VIEW ==================== -->
+<div class="view hidden" id="view-subaccount-detail">
+
+  <div class="page-topbar">
+    <div class="back-btn" onclick="showView('subaccounts')"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <span class="page-title">Sub-Account</span>
+  </div>
+
+  <div class="accounts-sheet">
+    <div class="breadcrumb">
+      <span class="breadcrumb-link" onclick="showView('subaccounts')">Sub-Accounts</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current" id="subaccount-breadcrumb-current">DDD@AAABBBMM</span>
+    </div>
+
+    <div class="player-hero">
+      <div class="account-globe">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9s1.3-6.5 3.8-9z" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="player-title" id="subaccount-title">DDD@AAABBBMM</div>
+        <div class="player-sub">Master Account</div>
+      </div>
+    </div>
+
+    <div class="section-label">Account Information</div>
+    <div class="info-card" style="margin-top:14px;">
+      <div class="info-row"><span class="info-key">Username</span><span class="info-val" id="subaccount-username">DDD@AAABBBMM</span></div>
+      <div class="info-row"><span class="info-key">Role</span><span class="badge role-master" id="subaccount-role">Master</span></div>
+      <div class="info-row"><span class="info-key">Status</span><span class="badge status-active" id="subaccount-status">Active</span></div>
+      <div class="info-row"><span class="info-key">Balance</span><span class="info-val balance" id="subaccount-balance">$0.00</span></div>
+    </div>
+
+    <div class="player-quickactions">
+      <div class="quick-btn topup" onclick="openTopupModal()">
+        <svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Top Up
+      </div>
+      <div class="quick-btn withdraw" onclick="sendPrompt('Withdraw for ' + currentAccount.username)">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Withdraw
+      </div>
+    </div>
+
+    <div class="section-label">Transaction History</div>
+    <div class="info-card" style="margin-top:14px;padding:14px 16px;">
+      <table class="txn-table">
+        <thead><tr><th>From / To</th><th>Type</th><th style="text-align:right;">Amount</th></tr></thead>
+        <tbody id="subaccount-txn-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item" onclick="showView('home')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></div>
+    <div class="nav-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Quick</span></div>
+    <div class="nav-item" onclick="showView('security')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Security</span></div>
+  </div>
+
+</div>
+
+<!-- ==================== PLAYER DETAIL VIEW ==================== -->
+<div class="view hidden" id="view-player">
+
+  <div class="page-topbar">
+    <div class="back-btn" onclick="showView('downline')"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <span class="page-title">Player</span>
+  </div>
+
+  <div class="accounts-sheet">
+    <div class="breadcrumb">
+      <span class="breadcrumb-link" onclick="showView('accounts')">AAABBBMM</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-link" onclick="showView('downline')">AAABBBMMAA</span>
+      <span class="breadcrumb-sep">/</span>
+      <span class="breadcrumb-current" id="player-breadcrumb-current">APXvirak</span>
+    </div>
+
+    <div class="player-hero">
+      <div class="account-globe">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9s1.3-6.5 3.8-9z" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="player-title" id="player-title">APXvirak</div>
+        <div class="player-sub">Player Account</div>
+      </div>
+    </div>
+
+    <div class="section-label">Player Information</div>
+    <div class="info-card" style="margin-top:14px;">
+      <div class="info-row"><span class="info-key">Username</span><span class="info-val" id="player-username">APXvirak</span></div>
+      <div class="info-row"><span class="info-key">Email</span><span class="info-val" id="player-email">N/A</span></div>
+      <div class="info-row"><span class="info-key">Phone</span><span class="info-val" id="player-phone">N/A</span></div>
+      <div class="info-row"><span class="info-key">Status</span><span class="badge status-active" id="player-status">Active</span></div>
+      <div class="info-row"><span class="info-key">Balance</span><span class="info-val balance" id="player-balance">$60.57</span></div>
+      <div class="info-row"><span class="info-key">Created At</span><span class="info-val" id="player-created">6/22/2026, 10:47:35 AM</span></div>
+    </div>
+
+    <div class="player-quickactions">
+      <div class="quick-btn topup" onclick="openTopupModal()">
+        <svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Top Up
+      </div>
+      <div class="quick-btn withdraw" onclick="sendPrompt('Withdraw for ' + currentAccount.username)">
+        <svg viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Withdraw
+      </div>
+    </div>
+
+    <div class="section-label">Transaction History</div>
+    <div class="info-card" style="margin-top:14px;padding:14px 16px;">
+      <table class="txn-table">
+        <thead><tr><th>From / To</th><th>Type</th><th style="text-align:right;">Amount</th></tr></thead>
+        <tbody id="player-txn-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item" onclick="showView('home')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></div>
+    <div class="nav-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Quick</span></div>
+    <div class="nav-item" onclick="showView('security')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Security</span></div>
+  </div>
+
+</div>
+
+<!-- ==================== BANK ACCOUNTS VIEW ==================== -->
+<div class="view hidden" id="view-bankaccounts">
+
+  <div class="page-topbar">
+    <div class="back-btn" onclick="showView('home')"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <span class="page-title">My Bank Accounts</span>
+    <button class="new-user-btn" onclick="openBankCreateModal()">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8" stroke-linecap="round"/></svg>
+      Add Account
+    </button>
+  </div>
+
+  <div class="accounts-sheet">
+    <div class="section-label" style="margin-bottom:16px;">Linked Bank Accounts</div>
+    <div id="bankaccounts-list"></div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item" onclick="showView('home')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></div>
+    <div class="nav-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Quick</span></div>
+    <div class="nav-item" onclick="showView('security')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Security</span></div>
+  </div>
+
+</div>
+
+<!-- ==================== BANK GROUPS VIEW ==================== -->
+<div class="view hidden" id="view-bankgroups">
+
+  <div class="page-topbar">
+    <div class="back-btn" onclick="showView('home')"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <span class="page-title">Bank Groups</span>
+    <button class="new-user-btn" onclick="openGroupCreateModal()">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8" stroke-linecap="round"/></svg>
+      New Group
+    </button>
+  </div>
+
+  <div class="accounts-sheet">
+    <div class="section-label" style="margin-bottom:16px;">Group Name</div>
+    <div id="bankgroups-list"></div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item" onclick="showView('home')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></div>
+    <div class="nav-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Quick</span></div>
+    <div class="nav-item" onclick="showView('security')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Security</span></div>
+  </div>
+
+</div>
+
+<!-- ==================== DEPOSIT REQUESTS VIEW ==================== -->
+<div class="view hidden" id="view-depositrequests">
+
+  <div class="page-topbar">
+    <div class="back-btn" onclick="showView('home')"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <span class="page-title">Deposit Requests</span>
+  </div>
+
+  <div class="accounts-sheet">
+    <div class="deposit-filters">
+      <input class="field-input" type="text" id="deposit-filter-username" placeholder="Filter by username..." oninput="renderDepositRequests()">
+      <select class="field-input" id="deposit-filter-status" onchange="renderDepositRequests()">
+        <option value="all">All</option>
+        <option value="pending" selected>Pending</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+      </select>
+    </div>
+    <div id="depositrequests-list"></div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item" onclick="showView('home')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></div>
+    <div class="nav-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Quick</span></div>
+    <div class="nav-item" onclick="showView('security')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Security</span></div>
+  </div>
+
+</div>
+
+<!-- ==================== WITHDRAWAL REQUESTS VIEW ==================== -->
+<div class="view hidden" id="view-withdrawalrequests">
+
+  <div class="page-topbar">
+    <div class="back-btn" onclick="showView('home')"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <span class="page-title">Withdrawal Requests</span>
+  </div>
+
+  <div class="accounts-sheet">
+    <div class="deposit-filters">
+      <input class="field-input" type="text" id="withdrawal-filter-username" placeholder="Filter by username..." oninput="renderWithdrawalRequests()">
+      <select class="field-input" id="withdrawal-filter-status" onchange="renderWithdrawalRequests()">
+        <option value="all">All</option>
+        <option value="pending" selected>Pending</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+      </select>
+    </div>
+    <div id="withdrawalrequests-list"></div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item" onclick="showView('home')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></div>
+    <div class="nav-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Quick</span></div>
+    <div class="nav-item" onclick="showView('security')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Security</span></div>
+  </div>
+
+</div>
+
+<!-- ==================== TRANSACTIONS VIEW ==================== -->
+<div class="view hidden" id="view-transactions">
+
+  <div class="page-topbar">
+    <div class="back-btn" onclick="showView('home')"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <span class="page-title">Transactions</span>
+  </div>
+
+  <div class="accounts-sheet">
+    <div class="txn-filters">
+      <select class="field-input" id="txn-filter-type" onchange="renderGlobalTransactions()">
+        <option value="all">All Types</option>
+        <option value="deposit">Deposit</option>
+        <option value="withdraw">Withdraw</option>
+      </select>
+      <div class="date-row">
+        <input class="field-input" type="date" id="txn-filter-from" onchange="renderGlobalTransactions()">
+        <input class="field-input" type="date" id="txn-filter-to" onchange="renderGlobalTransactions()">
+      </div>
+      <button class="reset-filters-btn" onclick="resetTxnFilters()">Reset Filters</button>
+    </div>
+    <div class="txn-list-wrap" id="global-txn-list"></div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item" onclick="showView('home')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></div>
+    <div class="nav-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Quick</span></div>
+    <div class="nav-item" onclick="showView('security')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Security</span></div>
+  </div>
+
+</div>
+
+<!-- ==================== WIN/LOSS REPORT VIEW ==================== -->
+<div class="view hidden" id="view-winlossreport">
+
+  <div class="page-topbar">
+    <div class="back-btn" onclick="showView('home')"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <span class="page-title">Win/Loss Report</span>
+  </div>
+
+  <div class="accounts-sheet">
+    <div class="report-filters">
+      <div class="field-group" style="margin-bottom:0;">
+        <span class="field-label">Date Range</span>
+        <select class="field-input" id="report-filter-range">
+          <option value="today">Today</option>
+          <option value="yesterday">Yesterday</option>
+          <option value="7days" selected>Last 7 Days</option>
+          <option value="30days">Last 30 Days</option>
+          <option value="custom">Custom</option>
+        </select>
+      </div>
+      <div class="date-row">
+        <div class="field-group" style="margin-bottom:0;">
+          <span class="field-label">Start Date</span>
+          <input class="field-input" type="date" id="report-filter-start" value="2026-06-30">
+        </div>
+        <div class="field-group" style="margin-bottom:0;">
+          <span class="field-label">End Date</span>
+          <input class="field-input" type="date" id="report-filter-end" value="2026-07-06">
+        </div>
+      </div>
+      <div class="field-group" style="margin-bottom:0;">
+        <span class="field-label">Provider</span>
+        <select class="field-input" id="report-filter-provider">
+          <option value="all" selected>All</option>
+          <option value="pgsoft">PG Soft Slots</option>
+          <option value="acewin">AceWin</option>
+          <option value="jili">JILI Games</option>
+          <option value="pragmatic">Pragmatic Play</option>
+          <option value="evolution">Evolution Live</option>
+        </select>
+      </div>
+      <button class="search-btn-full" onclick="searchWinLossReport()">Search</button>
+    </div>
+    <div id="winlossreport-list"></div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item" onclick="showView('home')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></div>
+    <div class="nav-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Quick</span></div>
+    <div class="nav-item" onclick="showView('security')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Security</span></div>
+  </div>
+
+</div>
+
+<!-- ==================== SECURITY VIEW ==================== -->
+<div class="view hidden" id="view-security">
+
+  <div class="page-topbar">
+    <div class="back-btn" onclick="showView('home')"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <span class="page-title">Security</span>
+  </div>
+
+  <div class="accounts-sheet">
+    <div class="section-label" style="margin-bottom:16px;">Security Center</div>
+    <div class="security-grid">
+      <div class="action-card" onclick="showView('userrole')">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M20.5 12a8.5 8.5 0 1 1-8.5-8.5" stroke-linecap="round"/><circle cx="9" cy="9" r="3"/><path d="M4 19c1-2.5 3-4 5-4s4 1.5 5 4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 4l1.3 1.3M18.5 3l1 3-3 1" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="action-label">User Role</div>
+      </div>
+      <div class="action-card" onclick="showView('useraccount')">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.3"/><path d="M4 19c1-2.7 3-4.3 5-4.3s4 1.6 5 4.3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="16.5" r="3"/><path d="M18 14.7v.6M18 17.7v.6M16.4 15.6l.5.3M19.1 17.1l.5.3M16.4 17.4l.5-.3M19.1 15.9l.5-.3" stroke-linecap="round"/></svg></div>
+        <div class="action-label">User Account</div>
+      </div>
+      <div class="action-card" onclick="showView('authorization')">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 5l2 2M14 8l2 2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="action-label">Authorization</div>
+      </div>
+      <div class="action-card" onclick="showView('changepassword')">
+        <div class="icon-box"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3.3"/><path d="M3.5 19c1-2.7 2.8-4.3 4.5-4.3" stroke-linecap="round" stroke-linejoin="round"/><rect x="13" y="12" width="8" height="7" rx="1.5"/><path d="M15 12V10a2 2 0 0 1 4 0v2" stroke-linecap="round"/></svg></div>
+        <div class="action-label">Change Password</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item" onclick="showView('home')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></div>
+    <div class="nav-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Quick</span></div>
+    <div class="nav-item active" onclick="showView('security')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Security</span></div>
+  </div>
+
+</div>
+
+<!-- ==================== USER ROLE VIEW ==================== -->
+<div class="view hidden" id="view-userrole">
+
+  <div class="page-topbar">
+    <div class="back-btn" onclick="showView('security')"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <span class="page-title">User Role</span>
+    <button class="new-user-btn" onclick="openRoleCreateModal()">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8" stroke-linecap="round"/></svg>
+      Add New
+    </button>
+  </div>
+
+  <div class="accounts-sheet">
+    <div class="role-search-wrap">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3" stroke-linecap="round"/></svg>
+      <input class="field-input" type="text" id="role-search-input" placeholder="Search roles..." oninput="renderRoles()">
+    </div>
+    <div id="userrole-list"></div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item" onclick="showView('home')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></div>
+    <div class="nav-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Quick</span></div>
+    <div class="nav-item active" onclick="showView('security')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Security</span></div>
+  </div>
+
+</div>
+
+<!-- ==================== USER ACCOUNT VIEW ==================== -->
+<div class="view hidden" id="view-useraccount">
+
+  <div class="page-topbar">
+    <div class="back-btn" onclick="showView('security')"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <span class="page-title">User Accounts</span>
+    <button class="new-user-btn" onclick="openUserAccountCreateModal()">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8" stroke-linecap="round"/></svg>
+      Add New
+    </button>
+  </div>
+
+  <div class="accounts-sheet">
+    <div class="useraccount-search-wrap">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.3-4.3" stroke-linecap="round"/></svg>
+      <input class="field-input" type="text" id="useraccount-search-input" placeholder="Search accounts..." oninput="renderUserAccounts()">
+    </div>
+    <div id="useraccount-list"></div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item" onclick="showView('home')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></div>
+    <div class="nav-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Quick</span></div>
+    <div class="nav-item active" onclick="showView('security')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Security</span></div>
+  </div>
+
+</div>
+
+<!-- ==================== AUTHORIZATION VIEW ==================== -->
+<div class="view hidden" id="view-authorization">
+
+  <div class="page-topbar">
+    <div class="back-btn" onclick="showView('security')"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <span class="page-title">Authorization</span>
+  </div>
+
+  <div class="accounts-sheet">
+    <div class="section-label" style="margin-bottom:20px;">Select Role to Configure</div>
+    <select class="field-input" id="auth-role-selector" onchange="onAuthRoleSelect()">
+      <option value="">-- Choose a Role --</option>
+      <option value="superadmin">Super Admin</option>
+      <option value="supervisor">Supervisor</option>
+      <option value="agent">Agent</option>
+    </select>
+    <div id="auth-permissions-container" style="margin-top:20px;"></div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item" onclick="showView('home')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></div>
+    <div class="nav-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Quick</span></div>
+    <div class="nav-item active" onclick="showView('security')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Security</span></div>
+  </div>
+
+</div>
+
+<!-- ==================== CHANGE PASSWORD VIEW ==================== -->
+<div class="view hidden" id="view-changepassword">
+
+  <div class="page-topbar">
+    <div class="back-btn" onclick="showView('security')"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div style="display:flex; align-items:center; gap:8px;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle><rect x="14" y="14" width="6" height="5" rx="1"></rect><path d="M15 14v-2a2 2 0 0 1 4 0v2"></path></svg>
+      <span class="page-title">Change Password</span>
+    </div>
+  </div>
+
+  <div class="accounts-sheet cp-container">
+    <div class="cp-card">
+      <div class="cp-header">
+        <svg viewBox="0 0 24 24" class="cp-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span class="cp-title">Update Your Password</span>
+      </div>
+
+      <div class="cp-user-info">
+        <div class="cp-avatar">KS</div>
+        <div class="cp-user-details">
+          <div class="cp-name">Kim Sovannak</div>
+          <div class="cp-role">admin_kim · Super Admin</div>
+        </div>
+      </div>
+
+      <div class="cp-section-title">
+        <span>PASSWORD DETAILS</span>
+      </div>
+
+      <div class="field-group">
+        <span class="field-label cp-label">CURRENT PASSWORD <span class="cp-req">*</span></span>
+        <div class="cp-input-wrap">
+          <input type="password" id="cp-current" class="field-input cp-input" placeholder="Enter current password...">
+          <button class="cp-eye-btn" onclick="togglePasswordVisibility('cp-current')">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="field-group" style="margin-bottom:8px;">
+        <span class="field-label cp-label">NEW PASSWORD <span class="cp-req">*</span></span>
+        <div class="cp-input-wrap">
+          <input type="password" id="cp-new" class="field-input cp-input" placeholder="Enter new password...">
+          <button class="cp-eye-btn" onclick="togglePasswordVisibility('cp-new')">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="cp-hint">Enter a new password</div>
+
+      <div class="field-group">
+        <span class="field-label cp-label">CONFIRM NEW PASSWORD <span class="cp-req">*</span></span>
+        <div class="cp-input-wrap">
+          <input type="password" id="cp-confirm" class="field-input cp-input" placeholder="Re-enter new password...">
+          <button class="cp-eye-btn" onclick="togglePasswordVisibility('cp-confirm')">
+            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="cp-requirements">
+        <div class="cp-req-title">PASSWORD REQUIREMENTS</div>
+        <ul class="cp-req-list">
+          <li class="cp-req-item"><span class="cp-dot"></span> At least 8 characters</li>
+          <li class="cp-req-item"><span class="cp-dot"></span> Contains uppercase letter</li>
+          <li class="cp-req-item"><span class="cp-dot"></span> Contains number</li>
+          <li class="cp-req-item"><span class="cp-dot"></span> Contains special character (!@#$...)</li>
+        </ul>
+      </div>
+
+      <button class="cp-update-btn" onclick="sendPrompt('Update password for Kim Sovannak')">
+        <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        Update Password
+      </button>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <div class="nav-item" onclick="showView('home')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9"/></svg><span>Home</span></div>
+    <div class="nav-item"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Quick</span></div>
+    <div class="nav-item active" onclick="showView('security')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg><span>Security</span></div>
+  </div>
+
+</div>
+
+<!-- ==================== MODALS ==================== -->
+
+<!-- Create New User Modal -->
+<div class="modal-overlay hidden" id="modal-overlay">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title">Create New Downline User</span>
+      <button class="modal-close" onclick="closeModal()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field-group">
+        <span class="field-label">Chosen Name</span>
+        <div class="name-field">
+          <span class="name-prefix">AAABBBMM</span>
+          <input type="text" placeholder="AA">
+        </div>
+      </div>
+      <div class="field-group"><span class="field-label">Email</span><input class="field-input" type="email" placeholder=""></div>
+      <div class="field-group"><span class="field-label">Phone</span><input class="field-input" type="tel" placeholder=""></div>
+      <div class="field-group"><span class="field-label">Password</span><input class="field-input" type="password" value="tempPass1"></div>
+      <div class="field-group"><span class="field-label">Account Info</span><input class="field-input" type="text" placeholder=""></div>
+      <div class="field-group">
+        <div class="field-row">
+          <div><span class="field-label">Telegram</span><input class="field-input" type="text" placeholder=""></div>
+          <div><span class="field-label">Line</span><input class="field-input" type="text" placeholder=""></div>
+        </div>
+      </div>
+      <div class="field-group">
+        <span class="field-label">Prefix</span>
+        <input class="field-input" type="text" placeholder="">
+        <div class="field-hint">A 3-digit prefix for the agent.</div>
+      </div>
+      <div class="toggle-row">
+        <div class="toggle-switch on" id="online-toggle" onclick="toggleOnline()"><div class="toggle-knob"></div></div>
+        <span class="toggle-label">Mark as Online User</span>
+      </div>
+      <div class="field-group"><span class="field-label">Role</span><div class="role-display">AGENT</div></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+      <button class="btn-create" onclick="sendPrompt('Create new downline user')">Create User</button>
+    </div>
+  </div>
+</div>
+
+<!-- Change Status Modal -->
+<div class="modal-overlay hidden" id="status-modal-overlay">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title">Change Status for AAABBBMMAA</span>
+      <button class="modal-close" onclick="closeStatusModal()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field-group">
+        <span class="field-label">Status</span>
+        <select class="field-input" id="status-select">
+          <option value="active" selected>ACTIVE</option>
+          <option value="inactive">INACTIVE</option>
+          <option value="suspended">SUSPENDED</option>
+          <option value="pending">PENDING</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeStatusModal()">Cancel</button>
+      <button class="btn-create" onclick="sendPrompt('Save status change for AAABBBMMAA')">Save Status</button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit User Modal -->
+<div class="modal-overlay hidden" id="edit-modal-overlay">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title">Edit User: AAABBBMMAA</span>
+      <button class="modal-close" onclick="closeEditModal()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field-group"><span class="field-label">Username</span><div class="role-display">AAABBBMMAA</div></div>
+      <div class="field-group"><span class="field-label">Role</span><div class="role-display">AGENT</div></div>
+      <div class="field-group"><span class="field-label">Email</span><input class="field-input" type="email" placeholder=""></div>
+      <div class="field-group"><span class="field-label">Phone</span><input class="field-input" type="tel" placeholder=""></div>
+      <div class="field-group"><span class="field-label">Account Info</span><input class="field-input" type="text" placeholder=""></div>
+      <div class="field-group">
+        <div class="field-row">
+          <div><span class="field-label">Telegram</span><input class="field-input" type="text" placeholder=""></div>
+          <div><span class="field-label">Line</span><input class="field-input" type="text" placeholder=""></div>
+        </div>
+      </div>
+      <div class="field-group"><span class="field-label">Prefix</span><div class="role-display">APX</div></div>
+      <div class="toggle-row">
+        <div class="toggle-switch on" id="edit-online-toggle" onclick="toggleEditOnline()"><div class="toggle-knob"></div></div>
+        <span class="toggle-label">Mark as Online User</span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeEditModal()">Cancel</button>
+      <button class="btn-create" onclick="sendPrompt('Save changes for AAABBBMMAA')">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<!-- Reset Password Modal -->
+<div class="modal-overlay hidden" id="reset-modal-overlay">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title">Reset Password for AAABBBMMAA</span>
+      <button class="modal-close" onclick="closeResetModal()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field-group"><span class="field-label">New Password</span><input class="field-input" type="password" placeholder=""></div>
+      <div class="field-group"><span class="field-label">Confirm New Password</span><input class="field-input" type="password" placeholder=""></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeResetModal()">Cancel</button>
+      <button class="btn-create" onclick="sendPrompt('Reset password for AAABBBMMAA')">Reset Password</button>
+    </div>
+  </div>
+</div>
+
+<!-- Assign Channels Modal -->
+<div class="modal-overlay hidden" id="channels-modal-overlay">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title">Assign Channels to AAABBBMMAA</span>
+      <button class="modal-close" onclick="closeChannelsModal()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="subsection-title">Assigned Channels</div>
+      <div class="channel-card">
+        <div class="channel-card-top"><span class="channel-name">PG Soft Slots</span><span class="badge status-active">Active</span></div>
+        <div class="channel-meta">
+          <div class="meta-block"><span class="meta-label">Commission</span><span class="meta-value">10%</span></div>
+          <div class="meta-block"><span class="meta-label">Share</span><span class="meta-value">0%</span></div>
+        </div>
+        <div class="channel-actions">
+          <button class="mini-btn edit-mini" onclick="sendPrompt('Edit channel PG Soft Slots for AAABBBMMAA')"><svg viewBox="0 0 24 24"><path d="M4 20l1-4.5L15.5 5l3.5 3.5L8.5 19 4 20z" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="mini-toggle on" onclick="this.classList.toggle('on')"><div class="mini-knob"></div></div>
+          <button class="mini-btn delete-mini" onclick="sendPrompt('Remove channel PG Soft Slots from AAABBBMMAA')"><svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+      <div class="channel-card">
+        <div class="channel-card-top"><span class="channel-name">AceWin</span><span class="badge status-active">Active</span></div>
+        <div class="channel-meta">
+          <div class="meta-block"><span class="meta-label">Commission</span><span class="meta-value">10%</span></div>
+          <div class="meta-block"><span class="meta-label">Share</span><span class="meta-value">0%</span></div>
+        </div>
+        <div class="channel-actions">
+          <button class="mini-btn edit-mini" onclick="sendPrompt('Edit channel AceWin for AAABBBMMAA')"><svg viewBox="0 0 24 24"><path d="M4 20l1-4.5L15.5 5l3.5 3.5L8.5 19 4 20z" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <div class="mini-toggle on" onclick="this.classList.toggle('on')"><div class="mini-knob"></div></div>
+          <button class="mini-btn delete-mini" onclick="sendPrompt('Remove channel AceWin from AAABBBMMAA')"><svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+      <div class="subsection-title" style="margin-top:22px;">Add New Assignment</div>
+      <div class="add-assignment-row">
+        <span class="field-label">Channel</span>
+        <select class="field-input" id="new-channel-select" onchange="onChannelSelect()">
+          <option selected>Select a channel...</option>
+          <option value="jili">JILI Games</option>
+          <option value="pragmatic">Pragmatic Play</option>
+          <option value="evolution">Evolution Live</option>
+        </select>
+      </div>
+      <div class="field-row add-assignment-row">
+        <div><span class="field-label">Commission</span><select class="field-input" id="new-commission-select" disabled><option>Select a channel first</option></select></div>
+        <div><span class="field-label">Share</span><select class="field-input" id="new-share-select" disabled><option>Select a channel first</option></select></div>
+      </div>
+      <button class="add-btn-full" onclick="sendPrompt('Add new channel assignment for AAABBBMMAA')">Add</button>
+    </div>
+    <div class="modal-footer"><button class="btn-cancel" onclick="closeChannelsModal()">Close</button></div>
+  </div>
+</div>
+
+<!-- Manage Domains Modal -->
+<div class="modal-overlay hidden" id="domains-modal-overlay">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title">Manage Domains for AAABBBMMAA</span>
+      <button class="modal-close" onclick="closeDomainsModal()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="subsection-title">Existing Domains</div>
+      <div class="domain-row">
+        <span class="domain-url">lobby.sbo24.dev</span>
+        <div class="domain-actions">
+          <button class="mini-btn edit-mini" onclick="sendPrompt('Edit domain lobby.sbo24.dev')"><svg viewBox="0 0 24 24"><path d="M4 20l1-4.5L15.5 5l3.5 3.5L8.5 19 4 20z" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="mini-btn delete-mini" onclick="sendPrompt('Remove domain lobby.sbo24.dev')"><svg viewBox="0 0 24 24"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M6 7l1 13a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1l1-13" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+      <div class="subsection-title" style="margin-top:22px;">Add New Domain</div>
+      <div class="add-domain-row">
+        <input class="field-input" type="text" placeholder="example.com">
+        <button class="add-domain-btn" onclick="sendPrompt('Add new domain for AAABBBMMAA')">Add</button>
+      </div>
+    </div>
+    <div class="modal-footer"><button class="btn-cancel" onclick="closeDomainsModal()">Close</button></div>
+  </div>
+</div>
+
+<!-- Sub-Account Status Modal -->
+<div class="modal-overlay hidden" id="subaccount-status-modal-overlay">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title" id="subaccount-status-modal-title">Change Status for DDD@AAABBBMM</span>
+      <button class="modal-close" onclick="closeSubaccountStatusModal()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field-group" style="margin-bottom:0;">
+        <span class="field-label">Status</span>
+        <select class="field-input" id="subaccount-status-select">
+          <option value="active">ACTIVE</option>
+          <option value="inactive">INACTIVE</option>
+          <option value="suspended">SUSPENDED</option>
+          <option value="pending">PENDING</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeSubaccountStatusModal()">Cancel</button>
+      <button class="btn-create" onclick="confirmSubaccountStatus()">Save Status</button>
+    </div>
+  </div>
+</div>
+
+<!-- Create Sub-Account Modal -->
+<div class="modal-overlay hidden" id="subaccount-create-modal-overlay">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title">Create New Sub-Account</span>
+      <button class="modal-close" onclick="closeSubaccountCreateModal()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field-group">
+        <span class="field-label">Username</span>
+        <div class="name-field">
+          <input type="text" id="subaccount-create-username" placeholder="">
+          <span class="name-suffix">@AAABBBMM</span>
+        </div>
+      </div>
+      <div class="field-group"><span class="field-label">Email</span><input class="field-input" type="email" id="subaccount-create-email" placeholder=""></div>
+      <div class="field-group" style="margin-bottom:0;"><span class="field-label">Password</span><input class="field-input" type="password" id="subaccount-create-password" placeholder=""></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeSubaccountCreateModal()">Cancel</button>
+      <button class="btn-create" onclick="confirmCreateSubaccount()">Create Sub-Account</button>
+    </div>
+  </div>
+</div>
+
+<!-- Top Up Modal -->
+<div class="modal-overlay hidden" id="topup-modal-overlay">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title" id="topup-modal-title">Top Up APXvirak</span>
+      <button class="modal-close" onclick="closeTopupModal()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field-group">
+        <span class="field-label">Quick Amount</span>
+        <div class="topup-amount-grid" id="topup-amount-grid">
+          <div class="topup-chip" onclick="selectTopupAmount(this,10)">$10</div>
+          <div class="topup-chip" onclick="selectTopupAmount(this,25)">$25</div>
+          <div class="topup-chip" onclick="selectTopupAmount(this,50)">$50</div>
+          <div class="topup-chip" onclick="selectTopupAmount(this,100)">$100</div>
+          <div class="topup-chip" onclick="selectTopupAmount(this,250)">$250</div>
+          <div class="topup-chip" onclick="selectTopupAmount(this,500)">$500</div>
+        </div>
+      </div>
+      <div class="field-group"><span class="field-label">Custom Amount (USD)</span><input class="field-input" type="number" id="topup-custom-amount" placeholder="0.00" oninput="onTopupCustomInput()"></div>
+      <div class="field-group"><span class="field-label">Note</span><input class="field-input" type="text" id="topup-note" placeholder="Optional reference"></div>
+      <div class="topup-summary">
+        <span class="k">New Balance</span>
+        <span class="v" id="topup-new-balance">$60.57</span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeTopupModal()">Cancel</button>
+      <button class="btn-create" onclick="confirmTopup()">Confirm Top Up</button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Bank Account Modal -->
+<div class="modal-overlay hidden" id="bank-create-modal-overlay">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title">Add New Bank Account</span>
+      <button class="modal-close" onclick="closeBankCreateModal()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field-group"><span class="field-label">Bank Name</span><input class="field-input" type="text" id="bank-create-bankname" placeholder="e.g. ACLEDA"></div>
+      <div class="field-group"><span class="field-label">Account Name</span><input class="field-input" type="text" id="bank-create-accountname" placeholder=""></div>
+      <div class="field-group"><span class="field-label">Account Number</span><input class="field-input" type="text" id="bank-create-accountnumber" placeholder=""></div>
+      <div class="field-group">
+        <span class="field-label">Group</span>
+        <select class="field-input" id="bank-create-group">
+          <option value="VIP">VIP</option>
+          <option value="Standard">Standard</option>
+          <option value="Premium">Premium</option>
+        </select>
+      </div>
+      <div class="toggle-row" style="margin-bottom:0;">
+        <div class="toggle-switch" id="bank-create-default-toggle" onclick="this.classList.toggle('on')"><div class="toggle-knob"></div></div>
+        <span class="toggle-label">Set as Default Account</span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeBankCreateModal()">Cancel</button>
+      <button class="btn-create" onclick="confirmCreateBankAccount()">Add Account</button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Bank Account Modal -->
+<div class="modal-overlay hidden" id="bank-edit-modal-overlay">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title">Edit Account</span>
+      <button class="modal-close" onclick="closeBankEditModal()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field-group">
+        <span class="field-label">Bank</span>
+        <select class="field-input" id="bank-edit-bank">
+          <option value="ACLEDA">ACLEDA</option>
+          <option value="ABA">ABA</option>
+          <option value="Wing">Wing</option>
+          <option value="TrueMoney">TrueMoney</option>
+          <option value="Prince Bank">Prince Bank</option>
+          <option value="Canadia Bank">Canadia Bank</option>
+        </select>
+      </div>
+      <div class="field-group"><span class="field-label">Account Holder Name</span><input class="field-input" type="text" id="bank-edit-accountname" placeholder=""></div>
+      <div class="field-group"><span class="field-label">Account Number</span><input class="field-input" type="text" id="bank-edit-accountnumber" placeholder=""></div>
+      <div class="field-group">
+        <span class="field-label">Bank Group</span>
+        <select class="field-input" id="bank-edit-group">
+          <option value="VIP">VIP</option>
+          <option value="Standard">Standard</option>
+          <option value="Premium">Premium</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <span class="field-label">Status</span>
+        <select class="field-input" id="bank-edit-status">
+          <option value="Active">ACTIVE</option>
+          <option value="Inactive">INACTIVE</option>
+          <option value="Suspended">SUSPENDED</option>
+          <option value="Pending">PENDING</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <span class="field-label">QR Code Image</span>
+        <div class="file-input-wrap">
+          <label class="file-input-btn" for="bank-edit-qr-file">Choose File</label>
+          <span class="file-input-name" id="bank-edit-qr-filename">No file chosen</span>
+        </div>
+        <input type="file" id="bank-edit-qr-file" accept="image/*" style="display:none;" onchange="onBankEditQrFileChange(event)">
+        <div class="field-hint">Upload a QR code for direct payment.</div>
+        <div class="qr-preview-wrap hidden" id="bank-edit-qr-preview-wrap">
+          <img id="bank-edit-qr-preview-img" src="" alt="QR preview">
+          <button class="qr-preview-remove" onclick="removeBankEditQr()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+        </div>
+      </div>
+      <div class="toggle-row" style="margin-bottom:0;">
+        <div class="toggle-switch" id="bank-edit-default-toggle" onclick="this.classList.toggle('on')"><div class="toggle-knob"></div></div>
+        <span class="toggle-label">Set as Default Account</span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeBankEditModal()">Cancel</button>
+      <button class="btn-create" onclick="confirmBankEdit()">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<!-- Create Bank Group Modal -->
+<div class="modal-overlay hidden" id="group-create-modal-overlay">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title">Create New Group</span>
+      <button class="modal-close" onclick="closeGroupCreateModal()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field-group" style="margin-bottom:0;"><span class="field-label">Group Name</span><input class="field-input" type="text" id="group-create-name" placeholder="e.g. VIP"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeGroupCreateModal()">Cancel</button>
+      <button class="btn-create" onclick="confirmCreateGroup()">Create Group</button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Bank Group Modal -->
+<div class="modal-overlay hidden" id="group-edit-modal-overlay">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title">Edit Group</span>
+      <button class="modal-close" onclick="closeGroupEditModal()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field-group" style="margin-bottom:0;"><span class="field-label">Group Name</span><input class="field-input" type="text" id="group-edit-name" placeholder=""></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeGroupEditModal()">Cancel</button>
+      <button class="btn-create" onclick="confirmGroupEdit()">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<!-- Create Role Modal -->
+<div class="modal-overlay hidden" id="role-create-modal-overlay">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title">Create New Role</span>
+      <button class="modal-close" onclick="closeRoleCreateModal()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field-group"><span class="field-label">Role Name</span><input class="field-input" type="text" id="role-create-name" placeholder="e.g. Regional Manager"></div>
+      <div class="field-group">
+        <span class="field-label">Badge Color</span>
+        <select class="field-input" id="role-create-badge">
+          <option value="role-superadmin">Crimson</option>
+          <option value="role-supervisor">Blue</option>
+          <option value="role-agent-tag" selected>Green</option>
+        </select>
+      </div>
+      <div class="field-group" style="margin-bottom:0;"><span class="field-label">Description</span><input class="field-input" type="text" id="role-create-desc" placeholder="Short description of this role"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeRoleCreateModal()">Cancel</button>
+      <button class="btn-create" onclick="confirmCreateRole()">Create Role</button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Role Modal -->
+<div class="modal-overlay hidden" id="role-edit-modal-overlay">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title" id="role-edit-modal-title">Edit Role</span>
+      <button class="modal-close" onclick="closeRoleEditModal()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field-group"><span class="field-label">Role Name</span><input class="field-input" type="text" id="role-edit-name" placeholder=""></div>
+      <div class="field-group">
+        <span class="field-label">Badge Color</span>
+        <select class="field-input" id="role-edit-badge">
+          <option value="role-superadmin">Crimson</option>
+          <option value="role-supervisor">Blue</option>
+          <option value="role-agent-tag">Green</option>
+        </select>
+      </div>
+      <div class="field-group" style="margin-bottom:0;"><span class="field-label">Description</span><input class="field-input" type="text" id="role-edit-desc" placeholder=""></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeRoleEditModal()">Cancel</button>
+      <button class="btn-create" onclick="confirmRoleEdit()">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+<!-- Create User Account Modal -->
+<div class="modal-overlay hidden" id="useraccount-create-modal-overlay">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title">Create New User Account</span>
+      <button class="modal-close" onclick="closeUserAccountCreateModal()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field-group"><span class="field-label">Username</span><input class="field-input" type="text" id="useraccount-create-username" placeholder=""></div>
+      <div class="field-group"><span class="field-label">Email</span><input class="field-input" type="email" id="useraccount-create-email" placeholder=""></div>
+      <div class="field-group"><span class="field-label">Password</span><input class="field-input" type="password" id="useraccount-create-password" placeholder=""></div>
+      <div class="field-group"><span class="field-label">Confirm Password</span><input class="field-input" type="password" id="useraccount-create-confirm-password" placeholder=""></div>
+      <div class="field-group">
+        <span class="field-label">Role</span>
+        <select class="field-input" id="useraccount-create-role">
+          <option value="superadmin">Super Admin</option>
+          <option value="supervisor">Supervisor</option>
+          <option value="agent" selected>Agent</option>
+        </select>
+      </div>
+      <div class="toggle-row" style="margin-bottom:0;">
+        <div class="toggle-switch on" id="useraccount-create-active-toggle" onclick="this.classList.toggle('on')"><div class="toggle-knob"></div></div>
+        <span class="toggle-label">Activate Account</span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeUserAccountCreateModal()">Cancel</button>
+      <button class="btn-create" onclick="confirmCreateUserAccount()">Create Account</button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit User Account Modal -->
+<div class="modal-overlay hidden" id="useraccount-edit-modal-overlay">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title" id="useraccount-edit-modal-title">Edit User Account</span>
+      <button class="modal-close" onclick="closeUserAccountEditModal()"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg></button>
+    </div>
+    <div class="modal-body">
+      <div class="field-group"><span class="field-label">Username</span><div class="role-display" id="useraccount-edit-username">admin</div></div>
+      <div class="field-group"><span class="field-label">Email</span><input class="field-input" type="email" id="useraccount-edit-email" placeholder=""></div>
+      <div class="field-group">
+        <span class="field-label">Role</span>
+        <select class="field-input" id="useraccount-edit-role">
+          <option value="superadmin">Super Admin</option>
+          <option value="supervisor">Supervisor</option>
+          <option value="agent">Agent</option>
+        </select>
+      </div>
+      <div class="toggle-row" style="margin-bottom:0;">
+        <div class="toggle-switch on" id="useraccount-edit-active-toggle" onclick="this.classList.toggle('on')"><div class="toggle-knob"></div></div>
+        <span class="toggle-label">Active</span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeUserAccountEditModal()">Cancel</button>
+      <button class="btn-create" onclick="confirmEditUserAccount()">Save Changes</button>
+    </div>
+  </div>
+</div>
+
+</div><!-- end .phone -->
+
+<!-- JavaScript files (order matters: data → utils → navigation → features → init) -->
+<script src="js/data.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/accounts.js"></script>
+<script src="js/subaccounts.js"></script>
+<script src="js/topup.js"></script>
+<script src="js/bank.js"></script>
+<script src="js/bankgroups.js"></script>
+<script src="js/deposits.js"></script>
+<script src="js/transactions.js"></script>
+<script src="js/winloss.js"></script>
+<script src="js/security.js"></script>
+<script src="js/init.js"></script>
+</body>
+</html>
