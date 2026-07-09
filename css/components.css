@@ -41,88 +41,160 @@
 }
 
 /* overview stats cards */
-.stats-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  margin-top:14px;
-  margin-bottom:32px;
+.downline-gradient-card {
+  background: linear-gradient(135deg, #6C5CE0 0%, #4FA3E3 100%);
+  border-radius: 24px;
+  padding: 24px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 24px rgba(108, 92, 224, 0.22);
+  margin-top: 14px;
+  margin-bottom: 24px;
 }
-.stat-card{
-  background:#fffdf7;
-  border:1px solid var(--rule);
-  border-radius:16px;
-  padding:16px;
-  box-shadow:0 2px 10px rgba(30,32,70,0.06);
+.downline-gradient-card .card-left {
+  display: flex;
+  flex-direction: column;
 }
-.stat-label{
-  font-size:12px;
-  color:var(--ink-soft);
-  font-weight:600;
-  display:block;
-  margin-bottom:10px;
+.downline-gradient-card .card-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  display: block;
+  margin-bottom: 6px;
 }
-.stat-value{
-  font-size:26px;
-  font-weight:800;
-  color:var(--ink);
-  letter-spacing:-0.5px;
-  margin-bottom:8px;
+.downline-gradient-card .card-value {
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  line-height: 1;
 }
-.stat-delta{
-  font-size:11.5px;
-  font-weight:600;
-  display:flex;
-  align-items:center;
-  gap:4px;
+.downline-gradient-card .card-value-suffix {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
 }
-.stat-delta.up{color:var(--sage);}
-.stat-delta.warn{color:var(--alert);}
+.downline-gradient-card .card-delta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 16px;
+  width: fit-content;
+}
+.downline-gradient-card .card-delta-pill svg {
+  stroke: #ffffff;
+  width: 12px;
+  height: 12px;
+}
+.downline-gradient-card .card-right {
+  display: flex;
+  align-items: center;
+}
+.downline-gradient-card .icon-circle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+.downline-gradient-card .icon-circle svg {
+  width: 22px;
+  height: 22px;
+  stroke: #ffffff;
+  fill: none;
+  stroke-width: 2;
+}
+
+.quick-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 14px;
+  margin-bottom: 24px;
+}
+.quick-stat-card {
+  background: #ffffff;
+  border: 1px solid #eef0f8;
+  border-radius: 20px;
+  padding: 16px 12px;
+  box-shadow: 0 4px 12px rgba(30, 32, 70, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.quick-stat-label {
+  font-size: 11px;
+  color: #8c94a5;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.quick-stat-value {
+  font-size: 26px;
+  font-weight: 800;
+  color: #14152b;
+  line-height: 1;
+}
 
 /* action grid */
 .actions-grid{
   display:grid;
   grid-template-columns:repeat(3, 1fr);
-  gap:12px;
+  gap:14px;
+  margin-top:14px;
+  margin-bottom:32px;
 }
 .action-card{
   background:linear-gradient(135deg, #6C5CE0 0%, #4FA3E3 100%);
-  border:1px solid transparent;
-  border-radius:16px;
-  box-shadow:0 4px 14px rgba(76,90,224,0.28);
-  padding:18px 6px 14px;
+  border:none;
+  border-radius:22px;
+  box-shadow:0 4px 14px rgba(108, 92, 224, 0.18);
+  padding:20px 8px 16px;
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:10px;
+  gap:12px;
   cursor:pointer;
-  transition:border-color .15s ease, transform .15s ease, background .15s ease;
+  transition:transform 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s ease;
 }
 .action-card:hover{
-  border-color:#545fc4;
-  background:#545fc4;
+  transform: translateY(-2px);
+  box-shadow:0 6px 18px rgba(108, 92, 224, 0.25);
 }
-.action-card:active{transform:scale(0.95);}
+.action-card:active{
+  transform:scale(0.95);
+}
 .icon-box{
-  width:48px;
-  height:48px;
-  border-radius:9px;
-  border:none;
   display:flex;
   align-items:center;
   justify-content:center;
+  background:none;
 }
 .icon-box svg{
-  width:30px;
-  height:30px;
+  width:32px;
+  height:32px;
   stroke:#fff;
   fill:none;
   stroke-width:1.6;
 }
 .action-label{
-  font-size:8px;
-  font-weight:600;
-  letter-spacing:0.2px;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.4px;
   color:#fff;
   text-transform:uppercase;
   text-align:center;

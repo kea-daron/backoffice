@@ -139,34 +139,34 @@
   bottom:calc(14px + env(safe-area-inset-bottom));
   left:14px;
   right:14px;
-  background:#fffdf7;
+  background:#ffffff;
   border-top:none;
-  border-radius:22px;
+  border-radius:24px;
   display:flex;
   justify-content:space-around;
   align-items:center;
-  padding:8px;
-  box-shadow:0 10px 28px rgba(30,32,70,0.22);
+  padding:10px 8px;
+  box-shadow:0 8px 30px rgba(30, 32, 70, 0.08);
 }
 .nav-item{
   display:flex;
   flex-direction:column;
   align-items:center;
   gap:4px;
-  color:var(--ink-soft);
+  color:#8c94a5;
   font-size:10px;
-  font-weight:600;
-  letter-spacing:0.4px;
+  font-weight:700;
+  letter-spacing:0.5px;
   text-transform:uppercase;
   cursor:pointer;
-  padding:8px 16px;
-  border-radius:16px;
-  transition:background .15s ease, color .15s ease;
+  padding:10px 20px;
+  border-radius:20px;
+  transition:all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .nav-item.active{
-  color:#fff;
+  color:#ffffff;
   background:linear-gradient(135deg, #6C5CE0 0%, #4FA3E3 100%);
-  box-shadow:0 4px 12px rgba(76,90,224,0.35);
+  box-shadow:0 4px 14px rgba(108, 92, 224, 0.25);
 }
 .nav-item svg{
   width:20px;
@@ -174,6 +174,59 @@
   stroke:currentColor;
   fill:none;
   stroke-width:1.7;
+}
+
+/* Home View Layout & Header Overrides */
+#view-home {
+  background: linear-gradient(135deg, #d3d7fc 0%, #cbe3fe 100%);
+}
+#view-home .statusbar {
+  color: #14152b;
+}
+#view-home .header .role {
+  color: var(--ink);
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+#view-home .header .name {
+  color: #14152b;
+  font-weight: 750;
+}
+#view-home .header .avatar-ring {
+  border-color: rgba(109, 120, 229, 0.2);
+}
+#view-home .sheet {
+  background: #ffffff;
+  box-shadow: 0 -4px 20px rgba(30, 32, 70, 0.03);
+}
+
+/* Bell button */
+.bell-btn {
+  margin-left: auto;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: #ffffff;
+  color: #14152b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(30, 32, 70, 0.06);
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+.bell-btn:active {
+  transform: scale(0.95);
+}
+.bell-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
 }
 
 /* view switching */
